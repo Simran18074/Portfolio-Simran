@@ -226,12 +226,12 @@ export const Hero = () => {
             <img 
               src={profileImg} 
               alt="Simran" 
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 grayscale contrast-[1.05] brightness-95 group-hover:grayscale-0 transition-all duration-700"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             {/* Dark gradient vignette */}
-            <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/40 via-transparent to-transparent z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/85 via-transparent to-transparent z-10" />
             {/* Glowing active outline */}
-            <div className="absolute inset-0 border border-accent/25 rounded-full pointer-events-none group-hover:border-accent/45 transition-colors" />
+            <div className="absolute inset-0 border border-accent/25 rounded-3xl pointer-events-none group-hover:border-accent/45 transition-colors" />
           </motion.div>
 
           {/* Transparent 3D Canvas Layer Floating Behind the Photo */}
