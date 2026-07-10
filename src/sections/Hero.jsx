@@ -5,6 +5,7 @@ import { HERO_DATA } from '../constants';
 import { FaGithub, FaLinkedin, FaArrowDown, FaFileDownload, FaEnvelope } from 'react-icons/fa';
 import ThreeCanvas from '../components/ThreeCanvas';
 import MagneticButton from '../components/MagneticButton';
+import profileImg from '../assets/profile.png';
 
 export const Hero = () => {
   const { setCursorType, setHoveredElement } = useTheme();
@@ -212,7 +213,7 @@ export const Hero = () => {
 
           {/* 3D Tilt Profile Card Frame */}
           <motion.div
-            className="w-56 h-72 md:w-64 md:h-80 rounded-3xl overflow-hidden border border-white/10 relative z-20 shadow-[0_20px_50px_rgba(0,0,0,0.6)] group cursor-none"
+            className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden border border-white/10 relative z-20 shadow-[0_15px_40px_rgba(0,0,0,0.6)] group cursor-none"
             style={{
               transformStyle: 'preserve-3d',
               transform: `perspective(1000px) rotateX(${photoRotateX}deg) rotateY(${photoRotateY}deg)`,
@@ -223,14 +224,14 @@ export const Hero = () => {
             onMouseEnter={() => setCursorType('project')}
           >
             <img 
-              src="/src/assets/profile.png" 
+              src={profileImg} 
               alt="Simran" 
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 grayscale contrast-[1.05] brightness-95 group-hover:grayscale-0 transition-all duration-700"
             />
             {/* Dark gradient vignette */}
-            <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/85 via-transparent to-transparent z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/40 via-transparent to-transparent z-10" />
             {/* Glowing active outline */}
-            <div className="absolute inset-0 border border-accent/25 rounded-3xl pointer-events-none group-hover:border-accent/45 transition-colors" />
+            <div className="absolute inset-0 border border-accent/25 rounded-full pointer-events-none group-hover:border-accent/45 transition-colors" />
           </motion.div>
 
           {/* Transparent 3D Canvas Layer Floating Behind the Photo */}

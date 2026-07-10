@@ -3,6 +3,7 @@ import { motion, useInView, useAnimation } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import { ABOUT_DATA } from '../constants';
 import { FaGraduationCap } from 'react-icons/fa';
+import profileImg from '../assets/profile.png';
 
 // Auto Count Up Component
 const CountUpNumber = ({ target, duration = 2, suffix = '' }) => {
@@ -97,17 +98,10 @@ export const About = () => {
               {/* Enhanced Profile Image */}
               <div className="sm:col-span-5 h-56 rounded-2xl overflow-hidden border border-white/10 relative select-none">
                 <img 
-                  src="/src/assets/profile.png" 
+                  src={profileImg} 
                   alt="Simran" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
                 />
-                <div className="hidden absolute inset-0 bg-gradient-to-tr from-accent to-secondary flex items-center justify-center font-display font-black text-xl text-slate-900">
-                  SIMRAN
-                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/60 to-transparent" />
               </div>
               
@@ -119,15 +113,10 @@ export const About = () => {
                 </p>
                 <div className="flex items-center gap-3">
                   <img 
-                    src="/src/assets/profile.png" 
+                    src={profileImg} 
                     alt="Simran" 
                     className="w-8 h-8 rounded-full object-cover border border-accent/40 animate-pulse"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'block';
-                    }}
                   />
-                  <div className="hidden w-8 h-8 rounded-full bg-gradient-to-r from-accent to-secondary" />
                   <div>
                     <div className="text-xs font-semibold text-white">Simran</div>
                     <div className="text-[10px] text-slate-500">MERN Software Engineer</div>
